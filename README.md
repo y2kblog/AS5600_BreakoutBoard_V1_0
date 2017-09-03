@@ -2,6 +2,7 @@
 
 # 12bit磁気式エンコーダAS5600 Breakout Board
 
+
 <img src="/images/EncoderPCB_image.png" width="500px">
 
 12 bit 分解能の磁気式アブソリュートエンコーダ AS5600 (ams AG製) を2.54mmピッチに変換する基板です。ネオジム磁石を同梱。  
