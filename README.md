@@ -2,7 +2,7 @@
 
 # 12bit磁気式エンコーダAS5600 Breakout Board
 
-
+ 
 <img src="/images/EncoderPCB_image_BothSide.png" width="500px">
 
 ## 概要
