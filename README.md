@@ -3,7 +3,9 @@
 # 12bit磁気式エンコーダAS5600 Breakout Board
 
 
-<img src="/images/EncoderPCB_image.png" width="500px">
+<img src="/images/EncoderPCB_image_BothSide.png" width="500px">
+
+## 概要
 
 12 bit 分解能の磁気式アブソリュートエンコーダ AS5600 (ams AG製) を2.54mmピッチに変換する基板です。ネオジム磁石を同梱。  
 5V、3.3V、GNDの電源ピンとI2C、アナログ/PWM出力のピンが出ています。電源電圧は5Vもしくは3.3Vです。  
@@ -11,8 +13,8 @@
 
 ※本ボードは[DCモータ制御シールドV1.0](https://github.com/y2kblog/DCMotorControlShieldV1_0)にも使用しています。
 
-## AS5600の特徴
-- 12 bit(4096)/1回転の高分解能
+### AS5600の特徴
+- 12 bit(4096)1回転の高分解能
 - 磁気式のため非接触で角度計測が可能であり、信頼性と耐久性に優れている
 - インターフェイス：I2C、アナログ出力もしくはPWM出力
 - アナログ出力：角度に対応したアナログ電圧値を出力
@@ -21,19 +23,24 @@
 - サンプリング時間：150μs
 - AS5600とネオジム磁石の中心が1mm程度ずれても値の読み取りが可能
 
-## 基板仕様
+### 基板仕様
 - 基板サイズ：横20mm×縦13.5ｍｍ
 - 基板マウント用穴：15mmピッチ、M3×2穴
-- AS5600の中心位置：横方向は中央、縦方向はピン側の基板端から10.2mm
+[](- AS5600の中心位置：横方向は中央、縦方向はピン側の基板端から10.2mm)
 - 電源電圧に5Vを供給する場合は3.3Vピンをオープンに、3.3Vを供給する場合は5Vピンにも3.3Vを供給してください。
 - DIRピンはGNDに接続、PGOピンは非接続
+
+### 寸法  
+<img src="/images/EncoderPCB_image.jpg" width="250px">
 
 ## 販売
 検討中
 
 ## 内容物
 - AS5600 Breakout Board 本体
-- ネオジム磁石
+- エンコーダ用ネオジム磁石
+
+<img src="/images/Product_photo.jpg" width="200px">
 
 ## 取付方法
 1. 同梱のネオジム磁石を回転体の軸中心に取り付けます
@@ -43,7 +50,7 @@
 <img src="/images/Assemble_sample.jpg" width="250px">
 
 ## Arduinoによるプログラム例  
- 
+
 ### I2Cのみを用いた角度の取得  
 #### 配線図  
 <img src="/images/WiringDiagram_I2C.png" width="400px">
