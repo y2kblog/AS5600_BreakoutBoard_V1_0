@@ -52,8 +52,12 @@
 #### 配線図  
 <img src="/images/WiringDiagram_I2C.png" width="400px">
 
+#### [ソースファイル](https://github.com/y2kblog/AS5600_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/I2C_SampleCode/I2C_SampleCode.ino)
+
+<!--
 #### ソースファイルのディレクトリ  
 "SampleCode/Arduino/I2C_SampleCode/I2C_SampleCode.ino"
+-->
 
 #### ミニマムコード  
 
@@ -85,8 +89,12 @@
 #### 配線図  
 <img src="/images/WiringDiagram_Analog.png" width="400px">
 
+#### [ソースファイル](https://github.com/y2kblog/AS5600_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/Analog_SampleCode/Analog_SampleCode.ino)
+
+<!--
 #### ソースファイルのディレクトリ  
 "SampleCode/Arduino/I2C_SampleCode/Analog_SampleCode.ino"
+-->
 
 
 <!--
