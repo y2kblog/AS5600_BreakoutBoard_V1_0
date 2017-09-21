@@ -79,7 +79,7 @@
       uint16_t RawAngle = 0;
       RawAngle  = ((uint16_t)Wire.read() << 8) & 0x0F00;
       RawAngle |= (uint16_t)Wire.read();
-      // Raw angle value (0x0000~0x0FFF) is stored in RawAngle
+      // Raw angle value (0 ~ 4095) is stored in RawAngle
     }
 
     void loop() {
@@ -105,7 +105,7 @@
       AnalogValue = analogRead(0);
       AnalogValue &= 0x03FF;
       AnalogValue = 0x03FF - AnalogValue;
-      // Angle value (0x0000~0x03FF) is stored in AnalogValue
+      // Angle value (0 ~ 1023) is stored in AnalogValue
     }
 
     void loop() {
