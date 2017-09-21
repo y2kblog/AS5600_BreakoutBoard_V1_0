@@ -48,9 +48,9 @@
 
 ## Arduinoによるプログラム例  
 
-### I2Cのみを用いた角度の取得  
+### I2Cによる角度の取得  
 #### 配線図  
-<img src="/images/WiringDiagram_I2C.png" width="400px">
+<img src="/images/WiringDiagram_I2C.png" width="300px">
 
 #### [ソースファイル](https://github.com/y2kblog/AS5600_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/I2C_SampleCode/I2C_SampleCode.ino)
 
@@ -85,9 +85,9 @@
     void loop() {
     }
 
-### アナログ出力ピンを用いた角度の取得  
+### アナログピンを用いた角度の取得  
 #### 配線図  
-<img src="/images/WiringDiagram_Analog.png" width="400px">
+<img src="/images/WiringDiagram_Analog.png" width="300px">
 
 #### [ソースファイル](https://github.com/y2kblog/AS5600_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/Analog_SampleCode/Analog_SampleCode.ino)
 
@@ -96,6 +96,20 @@
 "SampleCode/Arduino/I2C_SampleCode/Analog_SampleCode.ino"
 -->
 
+#### ミニマムコード  
+
+    #include <stdint.h>
+
+    void setup() {
+      uint16_t AnalogValue = 0;
+      AnalogValue = analogRead(0);
+      AnalogValue &= 0x03FF;
+      AnalogValue = 0x03FF - AnalogValue;
+      // Angle value (0x0000~0x03FF) is stored in AnalogValue
+    }
+
+    void loop() {
+    }
 
 <!--
 #### HAL (STM32)
