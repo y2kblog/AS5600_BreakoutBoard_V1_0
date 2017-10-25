@@ -33,8 +33,8 @@
 ### 回路図  
 <img src="/images/CircuitDiagram.png" width="450px">
 
-## 販売
-検討中
+## 販売  
+[スイッチサイエンス委託販売ページ](https://www.switch-science.com/catalog/3493/)  
 
 ## 内容物
 - AS5600 Breakout Board 本体
