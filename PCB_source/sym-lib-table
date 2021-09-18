@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name AS5600_BreakoutBoard_V1_0-rescue)(type Legacy)(uri ${KIPRJMOD}/AS5600_BreakoutBoard_V1_0-rescue.lib)(options "")(descr ""))
+  (lib (name AS560x_breakout)(type Legacy)(uri ${KIPRJMOD}/symbol/AS560x_breakout.lib)(options "")(descr ""))
+)

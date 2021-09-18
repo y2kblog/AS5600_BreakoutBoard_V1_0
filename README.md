@@ -136,5 +136,10 @@
     // Raw angle value (0x0000~0x0FFF) is stored in RawAngle
 -->
 
+## 資料
+
+### 3Dデータ
+- STEPファイルダウンロード：<a href="https://github.com/y2kblog/AS5600_BreakoutBoard_V1_0/raw/master/PCB_source/step/AS5600_BreakoutBoard_V1_0_step.zip" download="">AS5600_BreakoutBoard_V1_0_step.zip</a>  
+
 ## License
 MIT License
