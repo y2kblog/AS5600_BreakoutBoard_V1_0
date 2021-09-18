@@ -120,6 +120,7 @@ void loop() {
 }
 ```
 
+<!--
 #### STM32 (HAL)
 
 **サンプルコード**
@@ -138,7 +139,7 @@ RawAngle = (uint16_t) buf[0] << 8 | (uint16_t) buf[1];
 RawAngle &= 0x0FFF;
 // Raw angle value (0x0000~0x0FFF) is stored in RawAngle
 ```
-
+-->
 
 ## 資料
 
