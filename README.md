@@ -66,29 +66,31 @@
 
 #### ミニマムコード  
 
-    #include <stdint.h>
-    #include <Wire.h>
-    #define AS5600_AS5601_DEV_ADDRESS      0x36
-    #define AS5600_AS5601_REG_RAW_ANGLE    0x0C
+```cpp
+#include <stdint.h>
+#include <Wire.h>
+#define AS5600_AS5601_DEV_ADDRESS      0x36
+#define AS5600_AS5601_REG_RAW_ANGLE    0x0C
 
-    void setup() {
-      // I2C init
-      Wire.begin();
-      Wire.setClock(400000);
+void setup() {
+  // I2C init
+  Wire.begin();
+  Wire.setClock(400000);
 
-      // Read RAW_ANGLE value from encoder
-      Wire.beginTransmission(AS5600_AS5601_DEV_ADDRESS);
-      Wire.write(AS5600_AS5601_REG_RAW_ANGLE);
-      Wire.endTransmission(false);
-      Wire.requestFrom(AS5600_AS5601_DEV_ADDRESS, 2);
-      uint16_t RawAngle = 0;
-      RawAngle  = ((uint16_t)Wire.read() << 8) & 0x0F00;
-      RawAngle |= (uint16_t)Wire.read();
-      // Raw angle value (0 ~ 4095) is stored in RawAngle
-    }
+  // Read RAW_ANGLE value from encoder
+  Wire.beginTransmission(AS5600_AS5601_DEV_ADDRESS);
+  Wire.write(AS5600_AS5601_REG_RAW_ANGLE);
+  Wire.endTransmission(false);
+  Wire.requestFrom(AS5600_AS5601_DEV_ADDRESS, 2);
+  uint16_t RawAngle = 0;
+  RawAngle  = ((uint16_t)Wire.read() << 8) & 0x0F00;
+  RawAngle |= (uint16_t)Wire.read();
+  // Raw angle value (0 ~ 4095) is stored in RawAngle
+}
 
-    void loop() {
-    }
+void loop() {
+}
+```
 
 ### アナログピンを用いた角度の取得  
 #### 配線図  
@@ -103,38 +105,40 @@
 
 #### ミニマムコード  
 
-    #include <stdint.h>
+```cpp
+#include <stdint.h>
 
-    void setup() {
-      uint16_t AnalogValue = 0;
-      AnalogValue = analogRead(0);
-      AnalogValue &= 0x03FF;
-      AnalogValue = 0x03FF - AnalogValue;
-      // Angle value (0 ~ 1023) is stored in AnalogValue
-    }
+void setup() {
+  uint16_t AnalogValue = 0;
+  AnalogValue = analogRead(0);
+  AnalogValue &= 0x03FF;
+  AnalogValue = 0x03FF - AnalogValue;
+  // Angle value (0 ~ 1023) is stored in AnalogValue
+}
 
-    void loop() {
-    }
+void loop() {
+}
+```
 
-<!--
-#### HAL (STM32)
+#### STM32 (HAL)
 
 **サンプルコード**
+```c
+// I2Cの初期化は終わっているとする
 
-    // I2Cの初期化は終わっているとする
+#define AS5600_AS5601_DEV_ADDRESS      (0x36<<1)
+#define AS5600_AS5601_REG_RAW_ANGLE    0x0C
 
-    #define AS5600_AS5601_DEV_ADDRESS      (0x36<<1)
-    #define AS5600_AS5601_REG_RAW_ANGLE    0x0C
+uint8_t buf[2];
+HAL_I2C_Mem_Read(&hi2c, AS5600_AS5601_DEV_ADDRESS,
+  AS5600_AS5601_REG_RAW_ANGLE, I2C_MEMADD_SIZE_8BIT,
+  (uint8_t*)buf, 2, 1000);
+uint16_t RawAngle;
+RawAngle = (uint16_t) buf[0] << 8 | (uint16_t) buf[1];
+RawAngle &= 0x0FFF;
+// Raw angle value (0x0000~0x0FFF) is stored in RawAngle
+```
 
-    uint8_t buf[2];
-    HAL_I2C_Mem_Read(&hi2c, AS5600_AS5601_DEV_ADDRESS,
-      AS5600_AS5601_REG_RAW_ANGLE, I2C_MEMADD_SIZE_8BIT,
-      (uint8_t*)buf, 2, 1000);
-    uint16_t RawAngle;
-    RawAngle = (uint16_t) buf[0] << 8 | (uint16_t) buf[1];
-    RawAngle &= 0x0FFF;
-    // Raw angle value (0x0000~0x0FFF) is stored in RawAngle
--->
 
 ## 資料
 
