@@ -79,3 +79,5 @@ fp-info-cache
 
 # user
 old/
+*.dft
+*.dxf

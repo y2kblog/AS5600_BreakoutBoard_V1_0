@@ -143,8 +143,8 @@ RawAngle &= 0x0FFF;
 
 ## 資料
 
-### 3Dデータ
-- STEPファイルダウンロード：<a href="https://github.com/y2kblog/AS5600_BreakoutBoard_V1_0/raw/master/PCB_source/step/AS5600_BreakoutBoard_V1_0_step.zip" download="">AS5600_BreakoutBoard_V1_0_step.zip</a>  
+- 2Dデータ(DXF)：<a href="https://github.com/y2kblog/AS5600_BreakoutBoard_V1_0/raw/master/PCB_source/dxf/AS5600_BreakoutBoard_V1_0_dxf.zip" download="">AS5600_BreakoutBoard_V1_0_dxf.zip</a>  
+- 3Dデータ(STEP)：<a href="https://github.com/y2kblog/AS5600_BreakoutBoard_V1_0/raw/master/PCB_source/step/AS5600_BreakoutBoard_V1_0_step.zip" download="">AS5600_BreakoutBoard_V1_0_step.zip</a>  
 
 ## License
 MIT License
